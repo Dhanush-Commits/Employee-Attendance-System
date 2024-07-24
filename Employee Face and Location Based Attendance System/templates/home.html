@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lalezar">
+
+    <title>Employee Face Recognition Attendance System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            display: flex; /* Use flexbox for alignment */
+          justify-content: space-between;
+        }
+        .title {
+    font-size: 74px;
+    font-family: 'Lalezar', cursive; /* Assuming 'Lalezar' is the correct font family */
+    font-weight: 300;
+    margin-bottom: 25px;
+    background: linear-gradient(to right, #FFFFFF 0%, #C72CCF 99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.container-1{
+    width: 700px;
+    height: 500px;
+    margin-left: 100px;
+    margin-top: 150px;
+   
+}
+.container-2{
+
+margin-right: 50px;
+background: rgba( 255, 255, 255, 0.2 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 2.5px );
+-webkit-backdrop-filter: blur( 2.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+margin-top: 150px;
+margin-left:150px;
+width: 450px;
+margin-bottom: 50px;
+}
+.container-3{
+    margin-right: 50px;
+    background: rgba( 255, 255, 255, 0.2 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 2.5px );
+-webkit-backdrop-filter: blur( 2.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+margin-top: 100px;
+width: 450px;
+}
+.Welcome{
+    padding-left: 150px;
+}
+.mark{
+    padding:50px;
+}
+.here{
+    padding-left:180px;
+    padding-top: 0px;
+}
+.button-1{
+    font-size: 18px;
+    font-weight:bold;
+    border-radius: 10px;
+    width: 250px;
+    height: 50px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 90px;
+color: white;
+background-color: #C72CCF;
+border: none;
+}
+.button-1:hover{
+    -webkit-box-shadow:0px 0px 150px 28px rgba(172,7,181,0.92);
+    -moz-box-shadow: 0px 0px 150px 28px rgba(172,7,181,0.92);
+box-shadow: 0px 0px 150px 28px rgba(172,7,181,0.92);
+}
+.button-2{
+    font-size: 18px;
+    font-weight:bold;
+    border-radius: 10px;
+    width: 250px;
+    height: 50px;
+    padding: 10px;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    margin-left: 78px;
+    
+color: white;
+background-color: #C72CCF;
+border: none;
+}
+.button-2:hover{
+    -webkit-box-shadow:0px 0px 150px 28px rgba(172,7,181,0.92);
+    -moz-box-shadow: 0px 0px 150px 28px rgba(172,7,181,0.92);
+box-shadow: 0px 0px 150px 28px rgba(172,7,181,0.92);
+}
+.username{
+    font-size: small;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+input{
+    font-size: 20px;
+    margin-top:5px;
+    margin-bottom:10px;
+    border-radius: 10px; 
+    width: 300px; 
+    height: 35px;
+    margin-left: 50px;
+    border: none;
+}
+.total{
+    font-size:12px;
+    margin-left: 90px;
+}
+.title-1{
+    font-size: 50px;
+    font-family: 'Lalezar', cursive; /* Assuming 'Lalezar' is the correct font family */
+    font-weight: 300;
+    margin-bottom: 25px;
+    background: linear-gradient(to right, #FFFFFF 0%, #C72CCF 99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+margin-top: 200px;
+margin-left: 50px;
+}
+.title-2{
+    font-size: 50px;
+    font-family: 'Lalezar', cursive; /* Assuming 'Lalezar' is the correct font family */
+    font-weight: 300;
+    margin-bottom: 25px;
+    background: linear-gradient(to right, #FFFFFF 0%, #C72CCF 99%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-top: 50px;
+margin-right: 200px;
+}
+.des{
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+</style>
+        
+</head>
+<body>
+    <div class="upper">
+    <div class="container-1">
+        <div class="text"> <h1 class="title" id="hi">Employee Face And Location based Attendance System</h1>
+            <p class="description">A new way to Register your Attendance,way to the Digital world!!</p></div>
+       </div>
+       <div class="container-2" id="sectionToScrollTo">
+        <form action='/add' method="POST" enctype="multipart/form-data">
+        <h1 class="Welcome">Register</h1>
+        {% if mess%}
+        <p class="text-center" style="color: red;font-size: 20px;margin-left: 150px;">{{ mess }}</p>
+        {% endif %}
+    
+        <h1 class="username">Enter the User name</h1>
+        <input type="text" id="newuserename" name='newusername' required>
+        <h1 class="username">Enter the User Id</h1>
+        <input type="number" id="newusereid" name='newuserid' required>
+        <button class="button-2" type="submit">Register</button>
+        <h5 class="total"><i>Total Users in Database: {{totalreg}}</i></h5>
+   
+        </form>
+       </div>
+       </div>
+       <br>
+       <div class="lower">
+        <div class="container-3">
+            <h1 class="Welcome">Welcome</h1>
+        <h1 class="mark">Mark your Attendance</h1>
+        <h1 class="here">here</h1>
+        <a href="/start">
+        <button class="button-1">Take attendance</button></a><br>
+        {% if mess%}
+        <p class="text-center" style="color: rgb(255, 17, 203);font-size: 20px; padding-left: 150px;">{{ mess }}</p>
+        {% endif %}
+        <br>
+        <p style="padding-left: 160px;">Are you new user?</p>
+        <a href="#" onclick="scrollToSection()">
+        <p style="padding-left: 185px;font-weight: bold;">Click here</p> </a>       
+       </div>
+        <div class="container-4">
+            <div class="text-1"> 
+                <h1 class="title-1">Register Here</h1>
+                <h1 class="title-2">If You Are a New User</h1>
+                <h5>Instructions To Register:</h5>
+                <p class="des">1. Please remove your mask during attendance.<br><br>
+                    2. Ensure you are in a well-lit area during attendance.<br><br>
+                    3. After registration, the employee will mark your attendance.</p>
+        </div>
+</body>
+<script>
+    function typeWriter(element, text, i, callback) {
+        if (i < text.length) {
+            element.textContent += text.charAt(i); 
+            i++;
+            setTimeout(function() { typeWriter(element, text, i, callback); }, 50);
+        } else {
+            callback(); 
+        }
+    }
+const titleElement = document.getElementById('hi');
+ const text = titleElement.textContent;
+ titleElement.textContent = '';
+typeWriter(titleElement, text, 0, function() {
+console.log('Typewriter effect complete');
+ });
+ function scrollToSection() {
+            var sectionId = 'sectionToScrollTo';
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+</script>
+</html>
