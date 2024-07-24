@@ -1,47 +1,83 @@
 # Face Recognition Attendance System
 
-**Step 1: Clone the Repository**
-If you haven't already, clone your project repository from GitHub:
+## Overview
+This project is a face recognition-based attendance system implemented using Flask, OpenCV, and machine learning techniques. It captures faces, recognizes them, and marks attendance with details like time and location.
 
-git clone https://github.com/yourusername/face-recognition-attendance.git
-cd face-recognition-attendance
+## Features
+- Face detection using OpenCV's Haar cascades.
+- Face recognition using K-Nearest Neighbors (KNN) classifier.
+- Attendance logging with time and geolocation.
+- Integration with Google Sheets for storing attendance records.
+- Web interface built with Flask.
 
-**Step 2: Create requirements.txt File**
+## Technologies Used
+- Python
+- Flask
+- OpenCV
+- Scikit-learn
+- Pandas
+- Joblib
+- GSpread
+- OAuth2Client
+- Geopy
+- Requests
 
-Create a file named requirements.txt in the root directory of your project and add the following content:
+## Project Structure
+├── static
+│ ├── faces
+│ ├── face_recognition_model.pkl
+│ └── background.png
+├── templates
+│ └── home.html
+├── Attendance
+│ └── Attendance-<date>.csv
+├── app.py
+├── haarcascade_frontalface_default.xml
+├── requirements.txt
+└── README.md
 
-Flask==2.2.2
-numpy==1.23.1
-opencv-python==4.5.4.60
-pandas==1.4.3
-scikit-learn==1.1.1
-joblib==1.1.0
-gspread==5.3.2
-oauth2client==4.1.3
-geopy==2.2.0
-requests==2.28.1
-Step 3: Install Dependencies
-Install the dependencies listed in requirements.txt:
+## Setup Instructions
 
-pip install -r requirements.txt
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/face-recognition-attendance.git
+    cd face-recognition-attendance
+    ```
 
-**Step 4: Download Haar Cascade for Face Detection**
-Download the haarcascade_frontalface_default.xml file from the OpenCV GitHub repository and place it in the root directory of your project.
+2. **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-**Step 5: Google Sheets Integration**
-Credentials JSON File: Place your Google Sheets credentials JSON file in the root directory of your project.
-Update Code: Ensure the CREDENTIALS_FILE and SPREADSHEET_KEY variables in your code point to the correct credentials file and spreadsheet key.
+3. **Download Haar Cascade for face detection:**
+    Download the `haarcascade_frontalface_default.xml` file from [OpenCV GitHub](https://github.com/opencv/opencv/tree/master/data/haarcascades) and place it in the project root.
 
-**Step 6: Run the Application**
-Run your Flask application:
+4. **Google Sheets Integration:**
+    - Add your Google Sheets credentials JSON file and update the `CREDENTIALS_FILE` and `SPREADSHEET_KEY` in the code.
+    - Make sure the Google Sheets API is enabled and the credentials are correct.
 
+5. **Run the application:**
+    ```bash
+    python app.py
+    ```
 
-**Step 7: Adding a New User**
-Open your web browser and navigate to http://127.0.0.1:5000/add.
-Enter the new user's name and ID.
-Follow the instructions to capture the user's face using the webcam.
-**Step 8: Marking Attendance**
-Open your web browser and navigate to http://127.0.0.1:5000/start.
-The system will detect and recognize faces, logging attendance with time and location details.
+## Usage
+
+### Adding a New User
+1. Navigate to the `/add` route in your browser.
+2. Enter the new user's name and ID.
+3. Capture the user's face using the webcam.
+4. The system will train the model and add the new user.
+
+### Marking Attendance
+1. Navigate to the `/start` route in your browser.
+2. The system will use the webcam to detect and recognize faces.
+3. Attendance will be logged with time and location details.
+
+## Contributions
+Contributions are welcome! Please fork the repository and submit a pull request for any improvements or new features.
+
+## License
+This project is licensed under the MIT License.
 
 
