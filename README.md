@@ -23,18 +23,21 @@ This project is a face recognition-based attendance system implemented using Fla
 - Requests
 
 ## Project Structure
-├── static
-│ ├── faces
-│ ├── face_recognition_model.pkl
-│ └── background.png
-├── templates
-│ └── home.html
-├── Attendance
-│ └── Attendance-<date>.csv
-├── app.py
-├── haarcascade_frontalface_default.xml
-├── requirements.txt
+project_root\
+├── static\
+│   ├── faces\
+│   │   └── (image files for faces, if any)\
+│   ├── face_recognition_model.pkl\
+│   └── background.png\
+├── templates\
+│   └── home.html\
+├── Attendance\
+│   └── Attendance-.csv\
+├── app.py\
+├── haarcascade_frontalface_default.xml\
+├── requirements.txt\
 └── README.md
+
 
 ## Setup Instructions
 
