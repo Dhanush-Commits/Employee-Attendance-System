@@ -60,10 +60,10 @@ API_KEY = '663725614caf3804153127bkh37e613'
 #         data = response.json()
 
 #         if data.get('status') == 'OK':
-#             # Extract the formatted address from the response
+#             # Extract the formatted address from thense
 #             formatted_address = data.get('results', [{}])[0].get('formatted_address')
 #             return formatted_address
-#         else:
+#         else
 #             print("Reverse geocoding request failed. Status:", data.get('status'))
 
 #     except requests.RequestException as e:
