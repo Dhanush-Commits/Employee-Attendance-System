@@ -54,7 +54,7 @@ API_KEY = '663725614caf3804153127bkh37e613'
 # def reverse_geocode(latitude, longitude):
 #     url = f'https://geocode.maps.co/reverse?lat={latitude}&lng={longitude}&api_key={API_KEY}'
     
-#     try:
+#     :
 #         response = requests.get(url)
 #         response.raise_for_status()  # Raise an exception for HTTP errors
 #         data = response.json()
