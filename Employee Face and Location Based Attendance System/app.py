@@ -39,17 +39,7 @@ geolocator = Nominatim(user_agent="your_app_name")
 # Google Maps Geocoding API Key
 API_KEY = '663725614caf3804153127bkh37e613'
 
-# def geocode_address(address):
-#     url = f'https://geocode.maps.co/geocode/json?key={API_KEY}&address={address}'
-#     response = requests.get(url)
-#     if response.status_code == 200:
-#         data = response.json()
-#         if data['status'] == 'OK':
-#             # Extract latitude and longitude from the response
-#             latitude = data['results'][0]['geometry']['location']['lat']
-#             longitude = data['results'][0]['geometry']['location']['lng']
-#             return latitude, longitude
-#     return None, None
+
 
 # def reverse_geocode(latitude, longitude):
 #     url = f'https://geocode.maps.co/reverse?lat={latitude}&lng={longitude}&api_key={API_KEY}'
