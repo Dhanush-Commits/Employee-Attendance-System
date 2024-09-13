@@ -16,15 +16,15 @@ app = Flask(__name__)
 
 nimgs = 10
 
-imgBackground = cv2.imread("C:\\Users\\ELCOT\\Downloads\\face_recognition_flask-main\\face_recognition_flask-main\\background.png")
+imgBackground = cv2.imread("./background.png")
 
 datetoday = date.today().strftime("%m_%d_%y")
 datetoday2 = date.today().strftime("%d-%B-%Y")
 
-face_detector = cv2.CascadeClassifier('C:\\Users\\ELCOT\\Downloads\\face_recognition_flask-main\\face_recognition_flask-main\\haarcascade_frontalface_default.xml')
+face_detector = cv2.CascadeClassifier('./haarcascade_frontalface_default.xml')
 
 # Add your Google Sheets credentials JSON file path
-CREDENTIALS_FILE = 'C:\\Users\\ELCOT\\Downloads\\face_recognition_flask-main\\face_recognition_flask-main\\tough-ivy-422315-h4-e95dd47b045f.json'
+# CREDENTIALS_FILE = 'C:\\Users\\ELCOT\\Downloads\\face_recognition_flask-main\\face_recognition_flask-main\\tough-ivy-422315-h4-e95dd47b045f.json'
 
 # Add the Google Sheets document key
 SPREADSHEET_KEY = '1ynwgc9Yen5LWPMpl-HFMTJ3HiGHH763Ejf8VBRei_mw'
